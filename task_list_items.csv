@@ -1,0 +1,1229 @@
+Task List Item
+Object lifecycle and service access logging.
+Object versioning and Multi-factor authentication.
+Access controls and server-side encryption.
+Website hosting and Amazon S3 policies.
+One second.
+Five seconds.
+One minute.
+Three minutes.
+Five minutes.
+The user account has reached the maximum volume limit.
+The AMI is missing. It is the required part.
+The snapshot is corrupt.
+The user account has reached the maximum EC2 instance limit.
+A video transcoding pipeline running on EC2 using SQS to distribute tasks and Auto Scaling to adjust the number of nodes depending on the length of the queue. EBS volumes to host videos and EBS snapshots to incrementally backup original files after a few days. CloudFront to serve HLS transcoded videos from EC2.
+Elastic Transcoder to transcode original high-resolution MP4 videos to HL.
+EBS volumes to host videos and EBS snapshots to incrementally backup original files after a few days. CloudFront to serve HLS transcoded videos from EC2.
+Amazon S3 to host videos with Lifecycle Management to archive original files to Glacier after a few days. CloudFront to serve HLStranscoded videos from S3.
+A video transcoding pipeline running on EC2 using SQS to distribute tasks and Auto Scaling to adjust the number of nodes depending on the length of the queue. S3 to host videos with Lifecycle Management to archive all files to Glacier after a few days. CloudFront to serve HLS transcoded videos from Glacier.
+Implement IDS/IPS agents on each Instance running in VPC.
+Configure an instance in each subnet to switch its network interface card to promiscuous mode and analyze network traffic.
+Implement Elastic Load Balancing with SSL listeners in front of the web applications.
+Implement a reverse proxy layer in front of web servers and configure IDS/ IPS agents on each reverse proxy server.
+Amazon S3 provides read-after-write consistency for any type of PUT or DELETE.
+Consistency is not guaranteed for any type of PUT or DELETE.
+A successful response to a PUT request only occurs when a complete object is saved.
+Partially saved objects are immediately readable with a GET after an overwrite PU.
+S3 provides eventual consistency for overwrite PUTS and DELETE.
+By using an Amazon Route 53 Alias record.
+By using an AAAA record.
+By using an Amazon Route 53 CNAME record.
+By using an A record.
+If you have batch-oriented workloads.
+If you use production online transaction processing (OLTP) workloads.
+If you have workloads that are not sensitive to consistent performance.
+Use reduced redundancy storage (RRS) for all data in S3. Use a combination of Spot Instances and Reserved Instances for Amazon EMR jobs. Use Reserved Instances for Amazon Redshift.
+Use reduced redundancy storage (RRS) for PDF and .csv data in S3. Add Spot Instances to EMR jobs. Use Spot Instances for Amazon Redshift.
+Use reduced redundancy storage (RRS) for PDF and .csv data in Amazon S3. Add Spot Instances to Amazon EMR jobs. Use Reserved Instances for Amazon Redshift.
+Use reduced redundancy storage (RRS) for all data in Amazon S3. Add Spot Instances to Amazon EMR jobs. Use Reserved Instances for Amazon Redshift.
+SQL Server.
+MySQL.
+Oracle.
+user name.
+password.
+default group.
+"Yes, EC2 Container Service supports any container service you need."
+"Yes, EC2 Container Service also supports Microsoft container service."
+"No, Docker is the only container platform supported by EC2 Container Service presently."
+"Yes, EC2 Container Service supports Microsoft container service and Openstack."
+Amazon S3 as both the origin server and for caching.
+AWS Storage Gateway as the origin server and Amazon EC2 for caching.
+AWS CloudFront as both the origin server and for caching.
+Amazon S3 as the origin server and Amazon CloudFront for caching.
+None of these.
+Amazon AppStream store.
+Amazon SNS store.
+Amazon Instance Store.
+Only if the tag 'VPC_Change_Group' is true.
+Yes. You can.
+No. You cannot.
+Only if the tag 'VPC Change Group' is true.
+Elastic IP Address.
+Class B IP Address.
+Class A IP Address.
+Dynamic IP Address.
+HTTP or HTTPS.
+TCP/IP.
+HTTP.
+HTTPS.
+AWS Storage Gateway.
+Amazon DynamoDB.
+Amazon CloudFront.
+Amazon Glacier.
+Amazon Simple Queue Service.
+A web server running in your infrastructure.
+Amazon S3.
+Amazon Glacier.
+A web server running on Amazon EC2 instances.
+possible for EBS volumes.
+reserved for the root device.
+recommended for EBS volumes.
+recommended for instance store volumes.
+By using the service specific console or APICLI commands.
+None of these.
+Using Amazon EC2 API/CLI.
+Using all these methods.
+Northern Virginia.
+Sydney.
+"Both, Northern Virginia and Sydney."
+Depends on the Weighted Resource Record Sets.
+Release level.
+Minor version.
+Version number.
+Major version.
+Distribution Type.
+Data Transfer Out.
+Dedicated IP SSL Certificates.
+Requests.
+Huge volumes of data.
+Sensitive data.
+Non-critical or reproducible data.
+Critical data.
+3.
+4.
+2.
+1.
+Yes.
+Only with MSSQL based RDS.
+Only for Oracle RDS instances.
+No.
+Under DB INSTANCE DETAILS.
+Under REVI EW.
+Under MANAGEMENT OPTIONS.
+Under ENGINE SELECTION.
+20 Gigabit.
+10 Gigabit.
+Very High but variable.
+5 Gigabit.
+Force Detach.
+Detach Instance.
+AttachVolume.
+AttachInstance.
+A predictable and scalable MySQL database.
+A fast and reliable PL/SQL database cluster.
+"A standalone Cassandra database, managed by Amazon Web Services."
+"A fast, highly scalable managed NoSQL database service."
+DB Security Groups.
+VPC Security Groups.
+network ACLs.
+Force IAM users to contact an account administrator when the user has allowed his or her password to expire.
+A minimum password length.
+Force IAM users to contact an account administrator when the user has entered his password incorrectly.
+Prevent IAM users from reusing previous passwords.
+is not currently.
+is as of 2013.
+is planned to be in 2014.
+will never be.
+A scalable storage appliance on top of Amazon Web Services.
+An application container on top of Amazon Web Services.
+A service by this name doesn't exist.
+A scalable cluster of EC2 instances.
+Amazon SES console.
+AWS CloudFormation.
+SMTP Interface.
+AWS Elastic Beanstalk.
+The user can zoom a particular period by selecting that period with the mouse and then releasing the mouse.
+The user can zoom a particular period by specifying the aggregation data for that period.
+The user can zoom a particular period by double clicking on that period with the mouse.
+The user can zoom a particular period by specifying the period in the Time Range.
+Replace RDS with Redshift for the batch analysis and SNS to notify the on-premises system to update the dashboard.
+Replace ROS with Redshift for the oaten analysis and SQS to send a message to the on-premises system to update the dashboard.
+Create an RDS Read Replica for the batch analysis and SNS to notify me on-premises system to update the dashboard.
+Create an RDS Read Replica for the batch analysis and SQS to send a message to the on-premises system to update the dashboard.
+A route should be created as 0.0.0.0/0 and your internet gateway as target.
+Attach another ENI to the instance and connect via new EN.
+A NAT instance should be created and all traffic should be forwarded to NAT instance.
+A NACL should be created that allows all outbound traffic.
+InnoDB Tables.
+NDB data storage.
+Columnar data storage.
+NDB CLUSTER Storage.
+Attach one more volume with RAID 1 configuration.
+Attach one more volume with RAID 0 configuration.
+Connect multiple volumes and stripe them with RAI.
+Use the EBS volume as a root device.
+Set an S3 ACL on the bucket or the object.
+Create a CloudFront distribution for the bucket.
+Set an S3 bucket policy.
+Enable IAM Identity Federation.
+Use S3 Virtual l Hosting.
+Route 53 doesn't support ELB with an internal health check.You need to create your own Route 53 health check of the ELB.
+Route 53 natively supports ELB with an internal health check. Turn 'Evaluate target health' off and 'Associate with Health Check' on and R53 will use the ELB's internal health check.
+Route 53 doesn't support ELB with an internal health check. You need to associate your resource record set for the ELB with your own health check.
+Route 53 natively supports ELB with an internal health check. Turn 'Evaluate target health' on and 'Associate with Health Check' off and R53 will use the ELB's internal health check.
+5GB.
+1TB.
+2TB.
+500GB.
+Elastic IP address.
+PIOPS.
+AMI.
+Availability Zones.
+Prevents /dev/sdc from creating the instance.
+Prevents /dev/sdc from deleting the instance.
+Set the value of /dev/sdc to 'zero'.
+Prevents /dev/sdc from attaching to the instance.
+You don't need to specify the resource identifier while terminating a resource.
+"You can terminate, stop, or delete a resource based solely on its tags."
+"You can't terminate, stop, or delete a resource based solely on its tags."
+You don't need to specify the resource identifier while stopping a resource.
+Amazon DynamoDB.
+Amazon Redshift.
+Amazon Kinesis.
+Amazon Simple Queue Service.
+Only for Cluster Compute instances.
+Yes for all instance types.
+Only for M3 instance types.
+No.
+DB Subnet Set.
+RDS Subnet Group.
+DB Subnet Group.
+DB Subnet Collection.
+The out bound security group needs to be modified to allow out bound traffic.
+The outbound network ACL needs to be modified to allow outbound traffic.
+"Nothing, it can be accessed from any IP address using SS."
+Both the outbound security group and outbound network ACL need to be modified to allow outbound traffic.
+45.
+35.
+15.
+5.
+Use a separate ELB for each instance type and distribute load to ELBs with Route 53 weighted round robin.
+Configure Autoscaning group and Launch Configuration with ELB to add up to 10 more on-demand ml large instances when triggered by Cloudwatch shut off c3 2xlarge instances.
+Route traffic to EC2 ml large and c3 2xlarge instances directly using Route 53 latency based routing and health checks shut off ELB.
+Configure ELB with two c3 2xiarge Instances and use on-demand Autoscaling group for up to two additional c3.2xlarge instances Shut on mi .large instances.
+Upload your customer keys to AWS CloudHS.
+Associate the Amazon EBS volume with AWS CloudHS.
+Re-mount the Amazon EBS volume.
+"Create and mount a new, encrypted Amazon EBS volume. Move the data to the new volume. Delete the old Amazon EBS volume."
+Unmount the EBS volume. Toggle the encryption attribute to True. Re-mount the Amazon EBS volume.
+"Snapshot the current Amazon EBS volume. Restore the snapshot to a new, encrypted Amazon EBS volume. Mount the Amazon EBS volume."
+Configure the IP range of the US West region instance as the ingress security rule of RDS.
+It is not possible to access RDS of the US East region from the US West region.
+Open the security group of the US West region in the RDS security group's ingress rule.
+Create an IAM role which has access to RDS and launch an instance in the US West region with it.
+Accelerates transferring large amounts of data between the AWS cloud and portable storage devices .
+A web service that speeds up distribution of your static and dynamic web content.
+Connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between your on-premises IT environment and AWS's storage infrastructure.
+"Is a storage service optimized for infrequently used data, or 'cold data'."
+security token pool.
+security token.
+security pool.
+security group.
+Oracle export/import utilities.
+Oracle SQL Developer.
+Oracle Data Pump.
+DBMS_FILE_TRANSFER.
+Because most reachability issues are resolved by automated processes in less than 20 minutes.
+Because all EC2 instances are unreachable for 20 minutes every day when AWS does routine maintenance.
+Because all EC2 instances are unreachable for 20 minutes when first launched.
+Because of all the reasons listed here.
+Action.
+Value.
+Reset.
+Retrieve.
+You can't transfer existing domains to AWS.
+You can transfer existing domains into Amazon Route 53's management.
+You can transfer existing domains via AWS Direct Connect.
+You can transfer existing domains via AWS Import/Export.
+ec2-deploy-snapshot.
+ec2-fresh-snapshot.
+ec2-create-snapshot.
+ec2-new-snapshot.
+Multiple IP address.
+Public IP address.
+Private IP address.
+Elastic IP Address.
+Data is automatically saved as an EBS snapshot.
+Data is automatically saved as an EBS volume.
+Data is unavailable until the instance is restarted.
+Data is automatically deleted.
+HTTPS.
+HTTP.
+ICMP.
+IPv6.
+"ELB uses a four-tier, key-based architecture for encryption."
+"ELB offers clients a single point of contact, and can also serve as the first line of defense against attacks on your network."
+ELB takes over the encryption and decryption work from the Amazon EC2 instances and manages it centrally on the load balancer.
+ELB supports end-to-end traffic encryption using TLS (previously SSL) on those networks that use secure HTTP (HTTPS) connections.
+Route payment requests through two NAT instances setup for High Availability and whitelist the Elastic IP addresses attached to the MAT instances.
+Whitelist the VPC Internet Gateway Public IP and route payment requests through the Internet Gateway.
+Whitelist the ELB IP addresses and route payment requests from the Application servers through the EL.
+Automatically assign public IP addresses to the application instances in the Auto Scaling group and run a script on boot that adds each instances public IP address to the payment validation whitelist AP.
+"New Amazon SES users who have received production access can send up to 1,000 emails per 24-hour period, at a maximum rate of 10 emails per second."
+Every Amazon SES sender has a the same set of sending limits.
+Sending limits are based on messages rather than on recipients.
+Every Amazon SES sender has a unique set of sending limits.
+Deploy ElasticCache in-memory cache running in each Availability Zone.
+Implement sharding to distribute load to multiple RDS MySQL instances.
+Increase the RDS MySQL Instance size and Implement provisioned IOPS.
+Add an RDS MySQL read replica in each Availability Zone.
+A security group in which only tasks inside can communicate with each other.
+A special type of worker.
+A collection of related Workflows.
+The DNS record for the Amazon SWF service.
+bulk copy.
+group copy.
+dual copy.
+mass copy.
+Allow all inbound traffic and allow no outbound traffic.
+Allow no inbound traffic and allow all outbound traffic.
+Allow inbound traffic on port 80 only and allow all outbound traffic.
+Allow all inbound traffic and allow all outbound traffic.
+Amazon S3.
+Amazon Glacier.
+Amazon CloudFront.
+Amazon EBS.
+The AMI is missing a required part.
+The snapshot is corrupt.
+You need to create storage in EBS first.
+You've reached your volume limit.
+Enable Multi-Factor Authentication for your AWS root account.
+Assign an IAM role to the Amazon EC2 instance.
+Store the AWS Access Key ID/Secret Access Key combination in software comments.
+Assign an IAM user to the Amazon EC2 Instance.
+Yes.
+No.
+Only EC2-optimized EBS volumes.
+Only in read mode.
+16.
+256.
+8.
+4.
+Use AWS Data Pipeline to manage movement of data & meta-data and assessments Use an autoscaling group of G2 instances in a placement group.
+"Use Amazon Simple Workflow (SWF) to manages assessments, movement of data & meta-data Use an auto-scaling group of G2 instances in a placement group."
+Use Amazon Simple Workflow (SWF) to manages assessments movement of data & meta-data Use an auto-scaling group of C3 instances with SR-IOV (Single Root 1/0 Virtualization).
+Use AWS data Pipeline to manage movement of data & meta-data and assessments use autoscaling group of C3 with SR-IOV (Single Root 1/0 virtualization).
+Configure a NAT instance in your VPC Create a default route via the NAT instance and associate it with all subnets Configure a DNS A record that points to the NAT instance public IP address.
+Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers Configure a Route 53 CNAME record to your CloudFront distribution.
+Place all your web servers behind EL8 Configure a Route 53 CNAME to point to the ELB DNS name.
+Assign EIPs to all web servers. Configure a Route 53 record set with all EIPs. With health checks and DNS failover.
+Configure ELB with an EIP Place all your Web servers behind ELB Configure a Route 53 A record that points to the EIP.
+Set permissions on the object to public read during upload.
+Configure the bucket ACL to set all objects to public read.
+Configure the bucket policy to set all objects to public read.
+Use AWS Identity and Access Management roles to set the bucket to public read.
+"Amazon S3 objects default to public read, so no action is needed."
+Create and maintain AMIs of key servers where fast recovery is required.
+"Regularly run your servers, test them, and apply any software updates and configuration changes."
+All items listed here are important when thinking about disaster recovery.
+Ensure that you have all supporting custom software packages available in AWS.
+Setup an RDS MySQL instance in 2 Availability Zones to store the user preference data. Deploy a public facing application on a server in front of the database to manage security and access credentials.
+Setup a DynamoDB table with an item for each user having the necessary attributes to hold the user preferences. The mobile application will query the user preferences directly from the DynamoDB table. Utilize ST.
+"Web Identity Federation, and DynamoDB Fine Grained Access Control to authenticate and authorize access."
+Setup an RDS MySQL instance with multiple read replicas in 2 Availability Zones to store the user preference data. The mobile application will query the user preferences from the read replicas. Leverage the MySQL user management and access privilege system to manage security and access credentials.
+"Store the user preference data in S3 Setup a DynamoDB table with an item for each user and an item attribute pointing to the user' S3 object. The mobile application will retrieve the S3 URL from DynamoDB and then access the S3 object directly utilize STS, Web identity Federation, and S3 ACLs to authenticate and authorize access."
+10GB per DB.
+100GB per DB.
+2TB per DB.
+1TB per DB.
+Latency resource record sets cannot be used in combination with weighted resource record sets.
+You did not setup an HTTP health check tor one or more of the weighted resource record sets associated with me disabled web servers.
+The value of the weight associated with the latency alias resource record set in the region with the disabled servers is higher than the weight for the other region.
+One of the two working web servers in the other region did not pass its HTTP health check.
+You did not set 'Evaluate Target Health' to 'Yes' on the latency alias resource record set associated with example com in the region where you disabled the servers.
+snapshots.
+images.
+instance backups.
+mirrors.
+"Recommend that they lease space at a DirectConnect partner location and establish a lG DirectConnect connection to their vPC they would then establish Internet connectivity into their space, filter the traffic in hardware Web Application Firewall (WAF). And then pass the traffic through the DirectConnect connection into their application running in their VPC,"
+Add previously identified hostile source IPs as an explicit INBOUND DENY NACL to the web tier sub net.
+Add a WAF tier by creating a new ELB and an AutoScaling group of EC2 Instances running a host based WAF They would redirect Route 53 to resolve to the new WAF tier ELB The WAF tier wouldthier pass the traffic to the current web tier The web tier Security Groups would be updated to only allow traffic from the WAF tier Security Group
+Remove all but TLS 1 2 from the web tier ELB and enable Advanced Protocol Filtering This will enable the ELB itself to perform WAF functionality.
+Configure a single routing Table with a default route via the Internet gateway Propagate a default route via BGP on the AWS Direct Connect customer router. Associate the routing table with all VPCsubnets.
+Configure a single routing table with a default route via the internet gateway Propagate specific routes for the on-premises networks via BGP on the AWS Direct Connect customer router Associatethe routing table with all VPC subnets.
+Configure a single routing table with two default routes: one to the internet via an Internet gateway the other to the on-premises network via the VPN gateway use this routing table across all subnets in your VPC.
+Configure two routing tables one that has a default route via the Internet gateway and another that has a default route via the VPN gateway Associate both routing tables with each VPC subnet.
+"Create a virtual private gateway with multiple customer gateways, each with unique Border Gateway Protocol (BGP) Autonomous System Numbers (ASNs)."
+"Create a virtual private gateway with multiple customer gateways, each with a unique set of keys."
+"Create a virtual public gateway with multiple customer gateways, each with a unique Private subnet."
+"Create a virtual private gateway with multiple customer gateways, each with unique subnet id."
+The network I/O are not affected during data download.
+The policy cannot be set on the network I/O.
+There is no way the user can stop scaling as it is already configured.
+Suspend scaling.
+SOAP.
+DCOM.
+CORBA.
+XML-RPC.
+Supported on all Amazon EBS volume types.
+Snapshots are automatically encrypted.
+Available to all instance types.
+Existing volumes can be encrypted.
+Shared volumes can be encrypted.
+Only for Oracle RDS instances.
+Yes.
+No.
+Only in VPC.
+MakeSnapShot.
+FreshSnapshot.
+DeploySnapshot.
+CreateSnapshot.
+Enable AWS CloudTrail for the load balancer.
+Enable access logs on the load balancer.
+Install the Amazon CloudWatch Logs agent on the load balancer.
+Enable Amazon CloudWatch metrics on the load balancer.
+Only for Oracle RDS types.
+Yes.
+Only if configured at launch.
+No.
+Dedicated.
+Isolated.
+One.
+Reserved.
+Only in GovCloud.
+Only for S3 not EC2.
+Yes.
+No.
+Take regular snapshots.
+Create an AM.
+Create EBS with higher capacity.
+Access EBS regularly.
+Regional Data Server.
+Relational Database Service.
+Nothing.
+Regional Database Service.
+Log files your applications generate.
+All of the items listed on this page.
+"System-wide visibility into resource utilization, application performance, and operational health."
+Custom metrics generated by your applications and services.
+"1,000 write capacity units."
+"100,000 write capacity units."
+"Dynamic DB is designed to scale without limits, but if you go beyond 10,000 you have to contact AWS first."
+"10,000 write capacity units."
+"Yes, they do but only if they are detached from the instance."
+"No, you cannot attach EBS volumes to an instance."
+"No, they are dependent."
+"Yes, they do."
+None of these.
+A list of users that can access Amazon EC2 instances.
+An Access Control List (ACL) for AWS resources.
+"A firewall for inbound traffic, built-in around every Amazon EC2 instance."
+"DB security groups, VPC security groups, and EC2 security groups."
+DB security groups only.
+EC2 security groups only.
+"VPC security groups, and EC2 security groups."
+3.
+1.
+5.
+2.
+You can improve load and response times to user actions and queries however the cost associated with scaling web applications will be more.
+You can't improve load and response times to user actions and queries but you can reduce the cost associated with scaling web applications.
+You can improve load and response times to user actions and queries however the cost associated with scaling web applications will remain the same.
+You can improve load and response times to user actions and queries and also reduce the cost associated with scaling web applications.
+Use AWS Consolidated Billing and disable AWS root account access for the child accounts.
+Enable IAM cross-account access for all corporate IT administrators in each child account.
+Create separate VPCs for each division within the corporate IT AWS account.
+Use AWS Consolidated Billing to link the divisions' accounts to a parent corporate account.
+Write all child AWS CloudTrail and Amazon CloudWatch logs to each child account's Amazon S3 'Log' bucket.
+Add a password to the user.
+Enable Multi-Factor Authentication for the user.
+Assign a Password Policy to the user.
+Create a set of Access Keys for the user.
+Amazon S3 does not support the BitTorrent protocol because it is used for pirated software.
+You can use the BitTorrent protocol but only for objects that are less than 100 GB in size.
+You can use the BitTorrent protocol but you need to ask AWS for specific permissions first.
+You can use the BitTorrent protocol but only for objects that are less than 5 GB in size.
+Permit.
+Deny.
+Cancel.
+"Auto Scaling, Amazon CloudWatch and AWS Elastic Beanstalk."
+"Auto Scaling, Amazon CloudWatch and Elastic Load Balancing."
+"Amazon CloudFront, Amazon CloudWatch and Elastic Load Balancing."
+"AWS Elastic Beanstalk, Amazon CloudWatch and Elastic Load Balancing."
+It starts when the Status column for your distribution changes from Creating to Deployed.
+It starts as soon as you click the create instance option on the main EC2 console.
+It starts when your instance reaches 720 instance hours.
+It starts when Amazon EC2 initiates the boot sequence of an AMI instance.
+Use the indexing feature of S3.
+Tag the objects with the metadata to search on that.
+Use the query functionality of S3.
+Make your own DB system which stores the S3 metadata for the search functionality.
+Develop an identity broker that authenticates against IAM security Token service to assume a Lam role in order to get temporary AWS security credentials The application calls the identity broker toget AWS temporary security credentials with access to the appropriate S3 bucket.
+The application authenticates against LDAP and retrieves the name of an IAM role associated with the user. The application then ca lls the IAM Security Token Service to assume that IAM role The application can use the temporary credentials to access the appropriate S3 bucket.
+Develop an identity broker that authenticates against LDAP and then calls IAM Security To ken Service to get IAM federated user credentials The application calls the identity broker to get IAMfederated user credentials with access to the appropriate S3 bucket.
+The application authenticates against LDAP the application then calls the AWS identity and Access Management (IAM) Security service to log in to IAM using the LDAP credentials the application can use the IAM temporary credentials to access the appropriate S3 bucket.
+The application authenticates against IAM Security Token Service using the LDAP credentials the application uses those temporary AWS security credentials to access the appropriate S3 bucket.
+Yes always.
+No.
+Yes but only if they are using two factor authentication.
+Yes but only in VPC.
+It is not defined.
+Yes.
+It does support in-place non-atomic updates.
+"Yes, but each Reserved Instance is associated with a specific Region that cannot be changed."
+"Yes, only in US-West-2."
+"Yes, only in US-East-1."
+No.
+Different instances running on the same physical machine are isolated from each other via a 256-bit Advanced Encryption Standard (AES-256).
+Different instances running on the same physical machine are isolated from each other via the Xen hypervisor and via a 256-bit Advanced Encryption Standard (AES-256).
+Different instances running on the same physical machine are isolated from each other via the Xen hypervisor.
+Different instances running on the same physical machine are isolated from each other via IAM permissions.
+"Yes, You can."
+No. You cannot.
+The instance does not have a public IP address.
+The internet gateway security group must allow all outbound traffic.
+The instance security group must allow all inbound traffic.
+The instance 'Source/Destination check' property must be enabled.
+Elastic Beanstalk uses Elastic load balancing and CloudFormation doesn't.
+CloudFormation is faster in deploying applications than Elastic Beanstalk.
+Elastic Beanstalk is faster in deploying applications than CloudFormation.
+"CloudFormation is much more powerful than Elastic Beanstalk, because you can actually design and script custom resources."
+Write Lag.
+Read Replica.
+Replica Lag.
+Single Replica.
+"Use a DynamoDB table with an attribute defining the priority level. Transformation instances will scan the table for tasks, sorting the results by priority level."
+Use Route 53 latency based-routing to send high priority tasks to the closest transformation instances.
+"Use two SQS queues, one for high priority messages, the other for default priority. Transformation instances first poll the high priority queue; if there is no message, they poll the default priority queue."
+Use a single SQS queue. Each message contains the priority level. Transformation instances poll high-priority messages first.
+Depends on the instance type.
+False.
+Depends on whether you use API call.
+True.
+"Yes, AWS CloudFormation supports Amazon EC2 tagging."
+"No, CloudFormation doesn't support any tagging."
+"No, it doesn't support Amazon EC2 tagging."
+It depends if the Amazon EC2 tagging has been defined in the template.
+Yes.
+No.
+"1,000 to 100,000."
+"100 to 1,000."
+"10,000 to 100,000."
+"1,000 to 10,000."
+"Yes, you can."
+"No, you can't because EC2 is not related to AR"
+"No, you can't because you can't specify a particular Amazon EC2 resource in an IAM policy."
+"Yes, you can but only for the resources that are not affected by the action."
+"From the AWS Management Console, navigate to the Security Credentials page and retrieve the access and secret key for your account."
+Create an IAM user within the enterprise account assign a user policy to the IAM user that allows only the actions required by the SaaS application create a new access and secret key for the user and provide these credentials to the 5aa5 provider.
+Create an IAM role for cross-account access allows the SaaS provider's account to assume the role and assign it a policy that allows only the actions required by the SaaS application.
+"Create an IAM role for EC2 instances, assign it a policy that allows only the actions required tor the Saas application to work, provide the role ARM to the SaaS provider to use when launching their application instances."
+Remain as is.
+Terminate.
+Hibernate.
+Pause.
+Data is deleted from the instance store for security reasons.
+Data persists in the instance store.
+Data is partially present in the instance store.
+Data in the instance store will be lost.
+Add multiple elastic network interfaces (ENis) to each EC2 instance to increase the network bandwidth.
+Use dedicated instances to ensure that each instance has the maximum performance possible.
+Use an Amazon CloudFront distribution for both static and dynamic content.
+Use an Elastic Load Balancer with auto scaling groups at the web. App and Amazon Relational Database Service (RDS) tiers.
+Add alert Amazon CloudWatch to look for high Network in and CPU utilization.
+Create processes and capabilities to quickly add and remove rules to the instance OS firewall.
+not use Elastic Load Balancing.
+restrict Internet communication to private instances while allowing outgoing traffic.
+enable access key rotation for CloudWatch metrics.
+specify the URL of the load balancer for the domain name of your origin server.
+You can attach 5 ENIs per instance type.
+You can attach as many ENIs as you want.
+The number of ENIs you can attach varies by instance type.
+You can attach 100 ENIs total regardless of instance type.
+For security reasons.
+Hardware restrictions.
+Public (IPV4) internet addresses are a scarce resource.
+There are only 5 network interfaces per instance.
+Yes.
+No.
+Enable enhanced networking.
+Use Amazon S3 multipart upload.
+"Leveraging Amazon CloudFront, use the HTTP POST method to reduce latency."
+Use Amazon Elastic Block Store Provisioned IOPs and use an Amazon EBS-optimized instance.
+Amazon Glacier or Amazon S3.
+Amazon Glacier or AWS Import/Export.
+AWS Import/Export or Amazon CloudFront.
+Amazon EBS volumes or Amazon S3.
+"Use RDS Multi-AZ with two tables, one for 'Active calls' and one for 'Terminated calls'. in this way the 'Active calls' table is always small and effective to access."
+Use DynamoDB with a 'Calls' table and a Global Secondary Index on a 'lsActive' attribute that is present for active calls only in this way the Global Secondary index is sparse and more effective.
+Use DynamoDB with a 'Calls' table and a Global secondary index on a 'State' attribute that can equal to 'active' or 'terminated' in this way the Global Secondary index can be used for all Items in the table.
+Use RDS Multi-AZ with a 'CALLS' table and an Indexed 'STATE* field that can be equal to 'ACTIVE' or 'TERMINATED' in this way the SOL query Is optimized by the use of the Index.
+DNAME.
+CNAME.
+TXT.
+MX.
+2 Elastic IP addresses.
+A private IP address and an Elastic IP address.
+A public IP address and an Elastic IP address.
+A private IP address and a public IP address.
+User data.
+EC2Config service.
+IAM roles.
+AWS Config.
+Enable AWS CloudTrail to audit all Amazon S3 bucket access.
+Enable server access logging for all required Amazon S3 buckets.
+Enable the Requester Pays option to track access via AWS Billing.
+Enable Amazon S3 event notifications for Put and Post.
+Public DNS name.
+Internal DNS name.
+External DNS name.
+Global DNS name.
+Configure an IAM Role that grants access to an Amazon S3 object containing a signed certificate and configure me Auto Scaling group to launch instances with this role Have the instances bootstrap get the certificate from Amazon S3 upon first boot.
+Embed a certificate into the Amazon Machine Image that is used by the Auto Scaling group Have the launched instances generate a certificate signature request with the instance's assigned instance- id to the Key management service for signature.
+Configure the Auto Scaling group to send an SNS notification of the launch of a new instance to the trusted key management service. Have the Key management service generate a signed certificate and send it directly to the newly launched instance.
+Configure the launched instances to generate a new certificate upon first boot Have the Key management service poll the AutoScaling group for associated instances and send new instances a certificate signature (hat contains the specific instance-id.
+Use Amazon S3 server-side encryption with AWS Key Management Service managed keys.
+Use Amazon S3 server-side encryption with customer-provided keys.
+Use Amazon S3 server-side encryption with EC2 key pair.
+Use Amazon S3 bucket policies to restrict access to the data at rest.
+Encrypt the data on the client-side before ingesting to Amazon S3 using their own master key.
+Use SSL to encrypt the data while in transit to Amazon S3.
+your EC2 instance is in a running state.
+the instance exits from Amazon S3 console.
+your instance still exits the EC2 console.
+EC2 instances stop.
+Use the IAM based single sign between the AWS resources and the organization application.
+Use the IAM role and assign it to the instance.
+"Since the application is hosted on EC2, it does not need credentials to access S3."
+Use the 509 certificates instead of the access and the secret access keys.
+A cluster.
+A container instance.
+A container.
+A task definition.
+Create IAM users in the Master account with full Admin permissions. Create cross-account roles in the Dev and Test accounts that grant the Master account access to the resources in the account by inheriting permissions from the Master account.
+Create IAM users and a cross-account role in the Master account that grants full Admin permissions to the Dev and Test accounts.
+Create IAM users in the Master account Create cross-account roles in the Dev and Test accounts that have full Admin permissions and grant the Master.
+Link the accounts using Consolidated Billing. This will give IAM users in the Master account access to resources in the Dev and Test accounts.
+Running.
+Working.
+Progressing.
+Pending.
+Deploy a Windows Bastion host on the corporate network that has RDP access to all instances in the VP.
+Deploy a Windows Bastion host with an Elastic IP address in the public subnet and allow SSH access to the bastion from anywhere.
+"Deploy a Windows Bastion host with an Elastic IP address in the private subnet, and restrict RDP access to the bastion from only the corporate public IP addresses."
+"Deploy a Windows Bastion host with an auto-assigned Public IP address in the public subnet, and allow RDP access to the bastion from only the corporate public IP addresses."
+True.
+False.
+"Use CloudFront and an Elastic Load balancer in front of an auto-scaled set of web servers, the web servers will first can the Login With Amazon service to authenticate the user then process the users vote and store the result into a multi-AZ Relational Database Service instance."
+"Use CloudFront and the static website hosting feature of S3 with the Javascript SDK to call the Login With Amazon service to authenticate the user, use IAM Roles to gain permissions to a DynamoDB table to store the users vote."
+"Use CloudFront and an Elastic Load Balancer in front of an auto-scaled set of web servers, the web servers will first call the Login with Amazon service to authenticate the user, the web servers will process the users vote and store the result into a DynamoDB table using IAM Roles for EC2 instances to gain permissions to the DynamoDB table."
+"Use CloudFront and an Elastic Load Balancer in front of an auto-scaled set of web servers, the web servers will first call the Login. With Amazon service to authenticate the user, the web servers win process the users vote and store the result into an SQS queue using IAM Roles for EC2 Instances to gain permissions to the SQS queue. A set of application servers will then retrieve the items from the queue and store the result into a DynamoDB table."
+Create a set of long-term credentials using AWS Security Token Service with appropriate permissions Store these credentials in the mobile app and use them to access Amazon S3.
+Record the user's Information in Amazon RDS and create a role in IAM with appropriate permissions. When the user uses their mobile app create temporary credentials using the AWS Security Token Service 'Assume Role' function Store these credentials in the mobile app's memory and use them to access Amazon S3 Generate new credentials the next time the user runs the mobile app.
+Record the user's Information in Amazon DynamoDB.
+When the user uses their mobile app create temporary credentials using AWS Security Token Service with appropriate permissions Store these credentials in the mobile app's memory and use them to access Amazon S3 Generate new credentials the next time the user runs the mobile app.
+"Create IAM user. Assign appropriate permissions to the IAM user Generate an access key and secret key for the IAM user, store them in the mobile app and use these credentials to access Amazon S3."
+"Create an IAM user. Update the bucket policy with appropriate permissions for the IAM user Generate an access Key and secret Key for the IAM user, store them in the mobile app and use these credentials to access Amazon S3."
+Yes for all users.
+Yes for all users except root.
+No.
+Yes unless special permission granted.
+eu-west-1.
+us-east-1.
+us-east-2.
+ap-southeast-1.
+Serve user content from S3. CloudFront and use Route 53 latency-based routing between ELBs in each region Retrieve user preferences from a local DynamoDB table in each region and leverage SQS to capture changes to user preferences with 505 workers for propagating updates to each table.
+Use the 53 Copy API to copy recently accessed content to multiple regions and serve user content from S3. CloudFront with dynamic content and an ELB in each region Retrieve user preferences from an ElasticCache cluster in each region and leverage SNS notifications to propagate user preference changes to a worker node in each region.
+Use the 53 Copy API to copy recently accessed content to multiple regions and serve user content from S3 CloudFront and Route 53 latency-based routing Between ELBs in each region Retrieve user preferences from a DynamoDB table and leverage SQS to capture changes to user preferences with 505 workers for propagating DynamoDB updates.
+"Serve user content from S3. CloudFront with dynamic content, and an ELB in each region Retrieve user preferences from an ElastiCache cluster in each region and leverage Simple Workflow (SWF) to manage the propagation of user preferences from a centralized OB to each ElastiCache cluster."
+policy.
+permission.
+role.
+resource.
+1.
+2.
+3.
+4.
+Yes for all users except root.
+No.
+Yes unless special permission granted.
+Yes for all users.
+True.
+False.
+Amazon EBS-backed instances can be stopped and restarted.
+Instance-store backed instances can be stopped and restarted.
+Auto scaling requires using Amazon EBS-backed instances.
+Virtual Private Cloud requires EBS backed instances.
+Create and maintain AMIs of key servers where fast recovery is required.
+"Regularly run your servers, test them, and apply any software updates and configuration changes."
+Ensure that you have all supporting custom software packages available in AWS.
+All items listed here are important when thinking about disaster recovery.
+"After you launch an instance in EC2-Classic, you can't change its security groups."
+"After you launch an instance in EC2-Classic, you can change its security groups only once."
+"After you launch an instance in EC2-Classic, you can only add rules to a security group."
+"After you launch an instance in EC2-Classic, you cannot add or remove rules from a security group."
+EBS.
+Describe.
+Details.
+Volumes.
+True.
+False.
+Immediately to all instances in the security group.
+Immediately to the new instances only.
+"Immediately to the new instances, but old instances must be stopped and restarted before the new rules apply."
+"To all instances, but it may take several minutes for old instances to see the changes."
+An edge location is referred to the network configured within a Zone or Region.
+An edge location is an AWS Region.
+An edge location is the location of the data center used for Amazon CloudFront.
+An edge location is a Zone within an AWS Region.
+Amazon Instance Storage.
+Amazon EBS.
+You can't run a database inside an Amazon instance.
+Amazon S3.
+A single facility in eu-west-1 and a single facility in eu-central-1.
+A single facility in eu-west-1 and a single facility in us-east-1.
+Multiple facilities in eu-west-1.
+A single facility in eu-west-1.
+hash tag (#).
+anonymous user.
+wildcard (*).
+S3 user.
+Verify that the private key file corresponds to the Amazon EC2 key pair assigned at launch.
+Verify that your IAM user policy has permission to launch Amazon EC2 instances.
+Verify that you are connecting with the appropriate user name for your AMI.
+Verify that the Amazon EC2 Instance was launched with the proper IAM role.
+Verify that your federation trust to AWS has been established.
+"Allow at least five minutes for Windows/Linux shutdown scripts to complete, before terminating the instance."
+"Terminate the instance with the least active network connections. If multiple instances meet this criterion, one will be randomly selected."
+"Send an SNS notification, if configured to do so."
+Terminate an instance in the AZ which currently has 2 running EC2 instances.
+"Randomly select one of the 3 AZs, and then terminate an instance in that A."
+SAML-based Identity Federation.
+Cross-Account Access.
+AWS Identity and Access Management roles.
+Web Identity Federation.
+512 Unicode characters.
+64 Unicode characters.
+256 Unicode characters.
+128 Unicode characters.
+Yes.
+No.
+Multi-AZ.
+Read Replica.
+Multi region.
+PostgreSQL does not support HA.
+"Yes, they are allowed but only for selected regions."
+"No, they are never allowed."
+"Yes, they are allowed without any permission."
+"Yes, they are allowed but only with approval."
+Add the CloudFront account security group 'amazon-cf/amazon-cf-sg' to the appropriate S3 bucket policy.
+Create a S3 bucket policy that lists the CloudFront distribution ID as the Principal and the target bucket as the Amazon Resource Name (ARN).
+Create an Identity and Access Management (IAM) User for CloudFront and grant access to the objects in your S3 bucket to that IAM User.
+Create an Origin Access Identity (OAI) for CloudFront and grant access to the objects in your S3 bucket to that OA.
+Create more smaller flies on Amazon S3.
+Add additional cc2 8x large instances by introducing a task group.
+Use smaller instances that have higher aggregate 1/0 performance.
+"Create fewer, larger fi les on Amazon S3."
+Bring Your Own License.
+Role Bases License.
+Enterprise License.
+License Included.
+An Alias record can map one DNS name to another Amazon Route 53 DNS name.
+A CNAME record can be created for your zone apex.
+An Amazon Route 53 CNAME record can point to any DNS record hosted anywhere.
+TIL can be set for an Alias record in Amazon Route 53.
+An Amazon Route 53 Alias record can point to any DNS record hosted anywhere.
+"No, you only need to shutdown an instance before deleting it."
+Yes.
+"No, the snapshot would turn off your instance automatically."
+No.
+Yes.
+Only in certain regions.
+Only in VPC.
+No.
+customized deployments.
+AppStream customizations.
+log events.
+Multi-AZ deployments.
+True.
+False.
+500Mbps and 1Gbps.
+1Gbps and 10Gbps.
+100Mbps and 1Gbps.
+1Gbps.
+ALERT.
+ALARM.
+OK.
+INSUFFICIENT_DATA.
+"Web servers: store read-only data in S3, and copy from S3 to root volume at boot time. App servers: share state using a combination of DynamoDB and IP unicast. Database: use RDS with multi-AZdeployment and one or more read replicas. Backup: web servers, app servers, and database backed up weekly to Glacier using snapshots."
+"Web servers: store read-only data in an EC2 NFS server, mount to each web server at boot time. App servers: share state using a combination of DynamoDB and IP multicast. Database: use RDS with multi-AZ deployment and one or more Read Replicas. Backup: web and app servers backed up weekly via AMIs, database backed up via DB snapshots."
+"Web servers: store read-only data in S3, and copy from S3 to root volume at boot time. App servers: share state using a combination of DynamoDB and IP unicast. Database: use RDS with multi-AZ deployment and one or more Read Replicas. Backup: web and app servers backed up weekly via AMIs, database backed up via DB snapshots."
+"Web servers: store read-only data in S3, and copy from S3 to root volume at boot time. App servers: share state using a combination of DynamoDB and IP unicast. Database: use RDS with multi-AZdeployment. Backup: web and app servers backed up weekly via AMIs, database backed up via DB snapshots."
+"Basic, Developer, Business, Enterprise."
+"Basic, Startup, Business, Enterprise."
+"Free, Bronze, Silver, Gold."
+All support is free.
+10.
+15.
+2.
+20.
+A scalable service is capable of handling heterogeneity.
+A scalable service is resilient.
+A scalable architecture won't be cost effective as it grows.
+Increasing resources results in a proportional increase in performance.
+Simple Storage Solution.
+Storage Storage Storage (triple redundancy Storage).
+Storage Server Solution.
+Simple Storage Service.
+Amazon Simple Email Service.
+Amazon CloudWatch.
+Amazon Simple Queue Service.
+Amazon Route 53.
+Amazon Simple Notification Service.
+The client can connect over IPV4 or IPV6 using Dualstack.
+Communication between the load balancer and back-end instances is always through IPV4.
+ELB DNS supports both IPV4 and IPV6.
+The ELB supports either IPV4 or IPV6 but not both.
+An AWS developer who is an expert in Amazon RDS using both the Oracle and SQL Server DB engines.
+A graphical Java tool distributed without cost by Oracle.
+It is a variant of the SQL Server Management Studio designed by Microsoft to support Oracle DBMS functionalities.
+A different DBMS released by Microsoft free of cost.
+security groups and multi-factor authentication.
+security groups and 2-Factor authentication.
+security groups and biometric authentication.
+security groups and network ACLs.
+Basic.
+Primary.
+Detailed.
+Local.
+No because you can't use IAM to control access to CloudWatch data for specific resources.
+Yes. You can use IAM to control access to CloudWatch data for specific resources.
+No because you need to be Sysadmin to access CloudWatch data.
+Yes. Any user can see all CloudWatch data and needs no access rights.
+Instance user data.
+Resource tags.
+Instance metadata.
+Amazon Machine Image.
+Yes.
+No.
+AWS Access Control Service (ACS).
+AWS Identity and Access Management (IAM).
+Larger storage volumes support higher Provisioned IOPS rates; increase the provisioned volume storage of each of the 6 EBS volumes to 1TB.
+The EBS-Optimized throughput limits the total IOPS that can be utilized; use an EBS Optimized instance that provides larger throughput. Mo
+"Small block sizes cause performance degradation, limiting the I/O throughput; configure the instance device driver and filesystem to use 64KB blocks to increase throughput."
+"The standard EBS Instance root volume limits the total IOPS rate; change the instance root volume to also be a 500GB 4,000 Provisioned IOPS volume."
+"RAID 0 only scales linearly to about 4 devices; use RAID 0 with 4 EBS Provisioned IOPS volumes, but increase each Provisioned IOPS EBS volume to 6,000 IOPS."
+"Configure the security group of EC2, which allows access to the ELB source security group."
+Configure the EC2 instance so that it only listens on the ELB port.
+Open the port for an ELB static IP in the EC2 security group.
+"Configure the security group of EC2, which allows access only to the ELB listener."
+"Before you can delete an SSL certificate, you need to either rotate SSL certificates or revert from using a custom SSL certificate to using the default CloudFront certificate."
+You can't delete SSL certificates. You need to request it from AWS.
+"Before you can delete an SSL certificate, you need to set up the appropriate access level in IAM. Before you can delete an SSL certificate you need to set up https on your server."
+Before you can delete an SSL certificate you need to set up https on your server.
+A security group that has port 22 (for SSH) or port 3389 (for RDP) open to your network.
+A security group that has no ports open to your network.
+A security group that has only port 3389 (for RDP) open to your network.
+A security group that has only port 22 (for SSH) open to your network.
+Configure an instance with monitoring software and the elastic network interface (ENI) set to promiscuous mode packet sniffing to see an traffic across the VPC. Configure servers running in the VPC using the host-based 'route' commands to send all traffic through the platform to a scalable virtualized IDS/IP.
+Create a second VPC and route all traffic from the primary application VPC through the second VPC where the scalable virtualized IDS/IPS platform resides.
+Configure servers running in the VPC using the host-based 'route' commands to send all traffic through the platform to a scalable virtualized IDS/IP.
+Configure each host with an agent that collects all network traffic and sends that traffic to the IDS/IPS platform for inspection.
+Remove public read access and use signed URLs with expiry dates.
+Use CloudFront distributions for static content.
+Block the IPs of the offending websites in Security Groups.
+Store photos on an EBS volume of the web server.
+Frequent snapshots provide a higher level of data durability and they will not degrade the performance of your application while the snapshot is in progress.
+General Purpose (SSD) and Provisioned IOPS (SSD) volumes have a throughput limit of 128 MB/s per volume.
+"There is a relationship between the maximum performance of your EBS volumes, the amount of I/O you are driving to them, and the amount of time it takes for each transaction to complete."
+There is a 5 to 50 percent reduction in IOPS when you first access each block of data on a newly created or restored EBS volume.
+from the next billing cycle.
+after 30 minutes.
+immediately.
+after 24 hours.
+regional.
+based on Availability Zone.
+global.
+Because the root access keys will expire as soon as you log out.
+Because the root access keys expire after 1 week.
+Because the root access keys are the same for all users.
+Because they provide unrestricted access to your AWS resources.
+USD 0.10 per GB.
+No charge. It is free.
+USD 0.02 per GB
+USD 0.01 per GB.
+In DynamoDB there is no need to grant access.
+Depended to the type of access.
+Yes.
+No.
+to change the hash keys of the table directly.
+to check if an IAM policy requires the hash keys of the tables directly.
+"to read or modify any code commit key of the table directly, without a middle-tier service."
+"to read or modify the table directly, without a middle-tier service."
+Allow all inbound traffic and Allow no outbound traffic.
+Al low no inbound traffic and Al low no outbound traffic.
+Al low no inbound traffic and Al low all outbound traffic.
+Allow all inbound traffic and Allow all outbound traffic.
+INSUFFICIENT_DATA.
+ALARM.
+OK.
+STATUS_CHECK_FAILED.
+wildcards.
+pointers.
+tags.
+special filters.
+Public IP.
+Elastic IP.
+Private DNS.
+Private IP.
+You are billed for the virtual tape data you store in Amazon Glacier and are billed for the size of the virtual tape.
+"You are billed for the virtual tape data you store in Amazon Glacier and billed for the portion of virtual tape capacity that you use, not for the size of the virtual tape."
+"You are billed for the virtual tape data you store in Amazon S3 and billed for the portion of virtual tape capacity that you use, not for the size of the virtual tape."
+You are billed for the virtual tape data you store in Amazon S3 and are billed for the size of the virtual tape.
+True.
+False.
+Amazon SNS.
+Amazon SES.
+Amazon SQS.
+Amazon FPS.
+"Security Group Inbound Rule: Protocol – TCP. Port Range – 22, Source 72.34.51.100/32"
+"Port Range- 22, Source 72.34.51. 100/32."
+"Security Group Inbound Rule: Protocol – UDP, Port Range- 22, Source 72.34.51.100/32."
+"Network ACL Inbound Rule: Protocol – UDP, Port Range- 22, Source 72.34.51.100/32."
+"Network ACL Inbound Rule: Protocol – TCP, Port Range-22, Source 72.34.51.100/0."
+Attach the volume to an instance using EC2's SSL interface.
+Write the data randomly instead of sequentially.
+Encrypt the volume using the S3 server-side encryption service.
+Create an IAM policy that restricts read and write access to the volume.
+Use an encrypted file system on top of the EBS volume.
+Only for VPC based instances.
+Yes.
+No.
+Yes but only in certain cases.
+Yes.
+No.
+Amazon Relational Database Service.
+Amazon Elastic MapReduce.
+Amazon ElastiCache.
+Amazon DynamoDB.
+AWS Elastic Beanstalk.
+REVIEW.
+DB INSTANCE DETAILS.
+MANAGEMENT OPTIONS.
+ADDITIONAL CONFIGURATION.
+Use the EC2 VM Import Connector for vCenter to import the VM into EC2.
+Use Import/Export to import the VM as an ESS snapshot and attach to EC2.
+Use S3 to create a backup of the VM and restore the data into EC2.
+Use me ec2-bundle-instance API to Import an Image of the VM into EC2.
+RAID 5 only.
+RAID 5 and RAID 6.
+RAID 1 only.
+RAID 1 and RAID 6.
+"There is no encryption on Amazon Glacier, that's why it is cheaper."
+Amazon Glacier automatically encrypts the data using AES-128 a lesser encryption method than Amazon S3 but you can change it to AES-256 if you are willing to pay more.
+"Amazon Glacier automatically encrypts the data using AES-256, the same as Amazon S3."
+Amazon Glacier automatically encrypts the data using AES-128 a lesser encryption method than Amazon S3.
+Only Oracle based RDS.
+No.
+Only with MSSQL based RDS.
+Yes for all RDS instances.
+primary public IP.
+secondary private IP.
+secondary public IP.
+add on secondary IP.
+Delete On Termination.
+Remove On Deletion.
+Remove On Termination.
+Terminate On Deletion.
+AWS Simple Queue Service.
+AWS Simple Notification Service.
+AWS Simple Workflow Service.
+AWS Simple Email Service.
+Amazon EMR customers can choose to send data to Amazon S3 using the HTTPS protocol for secure transmission.
+Amazon S3 provides authentication mechanisms to ensure that stored data is secured against unauthorized access.
+Every packet sent in the AWS network uses Internet Protocol Security (IPsec).
+Customers may encrypt the input data before they upload it to Amazon S3.
+always.
+in some circumstances.
+never.
+"Yes, by default, the history of your API calls is logged."
+"Yes, you should turn on the CloudTrail in the AWS console."
+"No, you can only get a history of VPC API calls."
+"No, you cannot store history of EC2 API calls on Amazon."
+"Security, fault tolerance, high availability, and connectivity."
+"Security, access control, high availability, and performance."
+"Performance, cost optimization, security, and fault tolerance."
+"Performance, cost optimization, access control, and connectivity."
+Duplicate entries into two different buckets and create two separate CloudFront distributions where S3 access is restricted only to CloudFront identity.
+Create a CloudFront distribution with 'US' Europe price class for US/ Europe users and a different CloudFront distribution with Al l Edge Locations' for the remaining users.
+Create a CloudFront distribution with S3 access restricted only to the CloudFront identity and partition the blog entry's location in S3 according to the month it was uploaded to be used withCloudFront behaviors.
+Create a CloudFronl distribution with Restrict Viewer Access Forward Query string set to true and minimum TTL of 0.
+Amazon SES.
+Amazon CloudSearch.
+Amazon SWF.
+Amazon AppStream.
+"They don't exist. The Amazon EC2 AMI tools, instead, are used to manage permissions."
+Command-line tools to the Amazon EC2 web service.
+They are a set of graphical tools to manage EC2 instances.
+They don't exist. The Amazon API tools are a client interface to Amazon Web Services.
+Backup RDS using automated daily DB backups Backup the EC2 instances using AMIs and supplement with file-level backup to S3 using traditional enterprise backup software to provide file level restore.
+"Backup RDS using a Multi-AZ Deployment Backup the EC2 instances using Amis, and supplement by copying file system data to S3 to provide file-level restore."
+Backup RDS using automated daily DB backups Backup the EC2 instances using EBS snapshots and supplement with file-level backups to Amazon Glacier using traditional enterprise backup software to provide file-level restore.
+"Backup RDS database to S3 using Oracle RMAN Backup the EC2 instances using Amis, and supplement with EBS snapshots for individual volume restore."
+Metrics for CloudWatch are available only when you choose the same region as the application you are monitoring.
+You need to pay for CloudWatch for it to become active.
+Metrics for CloudWatch are available only when you choose the US East (Virginia).
+Metrics for CloudWatch are not available for the Asia Pacific region as yet.
+Yes.
+No.
+desk.cpl.
+mstsc.
+Security Groups.
+IAM System.
+SSH keys.
+Windows passwords.
+Same as the standard data transfer charge.
+Double the standard data transfer charge.
+No charge. It is free.
+Half of the standard data transfer charge.
+The load balancer was not configured to use a public subnet with an Internet gateway configured.
+The Amazon EC2 instances do not have a dynamically allocated private IP address.
+The security groups or network ACLs are not property configured for web traffic.
+The load balancer is not configured in a private subnet with a NAT instance.
+The VPC does not have a VGW configured.
+Amazon Resource Number.
+Amazon Resource Nametag.
+Amazon Resource Name.
+Amazon Resource Namespace.
+BYOL and Enterprise License.
+BYOL and License Included.
+Enterprise License and License Included.
+Role based License and License Included.
+Security Group and ACL (Access Control List) settings.
+Decommissioning storage devices.
+Patch management on the EC2 instance's operating system.
+Life-cycle management of IAM credentials.
+Controlling physical access to compute resources.
+Encryption of EBS (Elastic Block Storage) volumes.
+Deploy 6 EC2 instances in one Availability Zone and use Amazon Elastic Load Balancer.
+Deploy 3 EC2 instances in one region and 3 in another region and use Amazon Elastic Load Balancer.
+Deploy 3 EC2 instances in one Availability Zone and 3 in another Availability Zone and use Amazon Elastic Load Balancer.
+Deploy 2 EC2 instances in three regions and use Amazon Elastic Load Balancer.
+"Take hourly DB backups to S3, with transaction logs stored in S3 every 5 minutes."
+Use synchronous database master-slave replication between two Availability Zones.
+Take hourly DB backups to EC2 Instance store volumes with transaction logs stored in S3 every 5 minutes.
+Take 15 minute DB backups stored in Glacier with transaction logs stored in S3 every 5 minutes.
+"You can use multiple layers of security, including security groups and network access control lists (ACL)."
+You can only use access control lists (ACL).
+You don't need any security in subnets.
+"You can use multiple layers of security, including security groups, network access control lists (ACL) and CloudHS."
+A 1 time charge of 10$ for all the datasets.
+1$ per dataset per month.
+10$ per month for all the datasets.
+There is no charge for using the public data sets.
+$harding.
+Fai lure recovery.
+Federation.
+DOL operations.
+Amazon Route 53 can't help detect an outage. You need to use another service.
+Amazon Route 53 can help detect an outage of your website and redirect your end users to alternate locations.
+Amazon Route 53 can help detect an outage of your website but can't redirect your end users to alternate locations.
+"Amazon Route 53 can't help detect an outage of your website, but can redirect your end users to alternate locations."
+Amazon RDS with provisioned IOPS up to the anticipated peak write throughput.
+Amazon Simple Queue Service (SOS) for capturing the writes and draining the queue to write to the database.
+Amazon ElastiCache to store the writes until the writes are committed to the database.
+Amazon DynamoDB with provisioned write throughput up to the anticipated peak write throughput.
+11 minutes.
+7 minutes.
+10 minutes.
+14 minutes.
+File a change request to implement Alias Resource support in the application. Use Route 53 Alias Resource Record to distribute load on two application servers in different AZs.
+File a change request to implement Latency Based Routing support in the application. Use Route 53 with Latency Based Routing enabled to distribute load on two application servers in different AZs.
+"File a change request to implement Cross-Zone support in the application. Use an ELB with a TCP Listener and Cross-Zone Load Balancing enabled, two application servers in different AZs."
+File a change request to implement Proxy Protocol support in the application. Use an ELB with a TCP Listener and Proxy Protocol enabled to distribute load on two application servers in different AZs.
+Yes.
+No.
+Only in VPC.
+"Create an IAM user, which is not allowed to terminate instances by leveraging production EC2 termination protection."
+"Leverage resource based tagging along with an IAM user, which can prevent specific users from terminating production EC2 resources."
+"Leverage EC2 termination protection and multi-factor authentication, which together require users to authenticate before terminating EC2 instances."
+Create an IAM user and apply an IAM role which prevents users from terminating production EC2 instances.
+Updates to your DB Instance are synchronously replicated across Availability Zones to the standby in order to keep both in sync and protect your latest database updates against DB Instance failure.
+Your database will not resume operation without manual administrative intervention.
+Updates to your DB Instance are asynchronously replicated across Availability Zones to the standby in order to keep both in sync and protect your latest database updates against DB Instance failure.
+Updates to your DB Instance are synchronously replicated across S3 to the standby in order to keep both in sync and protect your latest database updates against DB Instance failure.
+"Failover environment: Create an S3 bucket and configure it for website hosting. Migrate your DNS to Route 53 using zone file import, and leverage Route 53 DNS failover to failover to the S3 hosted website."
+"Hybrid environment: Create an AMI, which can be used to launch web servers in EC2. Create an Auto Scaling group, which uses the AMI to scale the web tier based on incoming traffic. LeverageElastic Load Balancing to balance traffic between on-premises web servers and those hosted in AWS."
+"Offload traffic from on-premises environment: Setup a CloudFront distribution, and configure CloudFront to cache objects from a custom origin. Choose to customize your object cache behavior, and select a TIL that objects should exist in cache."
+Migrate to AWS: Use VM Import/Export to quickly convert an on-premises web server to an AMI.
+"Create an Auto Scaling group, which uses the imported AMI to scale the web tier based on incoming traffic. Create an RDS read replica and setup replication between the RDS instance and on-premises MySQL server to migrate the database."
+Paying account and Linked account.
+Parent account and Child account.
+Main account and Sub account.
+Main account and Secondary account.
+Amazon S3 to store 1/0 files. SQS to distribute elaboration commands to a group of hosts working in parallel. Auto scaling to dynamically size the group of hosts depending on the length of the SQS queue.
+EBS with Provisioned IOPS (PIOPS) to store 1/0 files. SNS to distribute elaboration commands to a group of hosts working in parallel Auto Scaling to dynamically size the group of hosts depending on the number of SNS notifications.
+"Amazon S3 to store 1/0 files, SNS to distribute evaporation commands to a group of hosts working in parallel. Auto scaling to dynamically size the group of hosts depending on the number of SNS notifications."
+EBS with Provisioned IOPS (PIOPS) to store 1/0 files SOS to distribute elaboration commands to a group of hosts working in parallel Auto Scaling to dynamically size the group ot hosts depending on the length of the SQS queue.
+A security group.
+An instance type.
+A storage cluster.
+An object.
+http://254.169.169.254/latest/.
+http://169.169.254.254/latest/.
+http://127.0.0.1/latest/.
+http://169.254.169.254/latest/.
+token.
+endpoint.
+action.
+None of these.
+Region.
+Provisioned IOPS.
+Availability Zone.
+Instance size.
+"Use SQS for passing job messages use Cloud Watch alarms to terminate EC2 worker instances when they become idle. Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage."
+"Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SOS Once data is processed,"
+"Change the storage class of the S3 objects to Reduced Redundancy Storage. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS Once data is processed, change the storage class of the S3 objects to Glacier."
+"Use SNS to pass job messages use Cloud Watch alarms to terminate spot worker instances when they become idle. Once data is processed, change the storage class of the S3 object to Glacier."
+All instances must be in the same AZ.
+All instances can be across multiple regions.
+The placement group cannot have more than 5 instances.
+All instances must be in the same region.
+Rollback all the changes and terminate all the created services.
+It will wait for the user's input about the error and correct the mistake after the input.
+CloudFormation can never throw an error after launching a few services since it verifies all the steps before launching.
+It will warn the user about the error and ask the user to manually create RDS.
+"Instantiate a c3.8xlarge instance in us-east-1. Provision 4x1TB EBS volumes, attach them to the instance, and configure them as a single RAID 5 volume. Ensure that EBS snapshots are performed every 15 minutes."
+"Instantiate a c3.8xlarge instance in us-east-1. Provision 3xlTB EBS volumes, attach them to the Instance, and configure them as a single RAID 0 volume. Ensure that EBS snapshots are performed every 15 minutes."
+"Instantiate an i2.8xlarge instance in us-east-1a. Create a RAID 0 volume using the four 800GB SSD ephemeral disks provided with the instance. Provision 3x1TB EBS volumes, attach them to the instance, and configure them as a second RAID 0 volume. Configure synchronous, block-level replication from the ephemeral-backed volume to the EBS-backed volume."
+"Instantiate a c3.8xlarge instance in us-east-1. Provision an AWS Storage Gateway and configure it for 3 TB of storage and 100,000 IOPS. Attach the volume to the instance."
+"Instantiate an i2.8xlarge instance in us-east-1a. Create a RAID 0 volume using the four 800GB SSD ephemeral disks provided with the instance. Configure synchronous, block-level replication to an identically configured instance in us-east-1b."
+AWS Directory Service AD Connector.
+AWS Directory Service Simple AD.
+AWS Identity and Access Management groups.
+AWS identity and Access Management roles.
+AWS identity and Access Management users.
+Add a business process management application to your Elastic Beanstalk app servers and re-use the ROS database for tracking order status use one of the Elastic Beanstalk instances to send emails to customers.
+Use SWF with an Auto Scaling group of activity workers and a decider instance in another Auto Scaling group with min/max=l Use the decider instance to send emails to customers.
+Use SWF with an Auto Scaling group of activity workers and a decider instance in another Auto Scaling group with min/max=l use SES to send emails to customers.
+Use an SQS queue to manage all process tasks Use an Auto Scaling group of EC2 Instances that poll the tasks and execute them. Use SES to send emails to customers.
+user.
+AWS Account.
+group.
+role.
+"In the security group, open port 22 for IP 10.20.30.40."
+"In the security group, open port 22 for IP 10.20.30.40/32."
+"In the security group, open port 22 for IP 10.20.30.40/24."
+"In the security group, open port 22 for IP 10.20.30.40/0."
+OracleISAM.
+MSSQLDB.
+InnoDB.
+MyISAM.
+You mean Amazon 'Iceberg': it's a low-cost storage service.
+A security tool that allows to 'freeze' an EBS volume and perform computer forensics on it.
+A low-cost storage service that provides secure and durable storage for data archiving and backup.
+It's a security tool that allows to 'freeze' an EC2 instance and perform computer forensics on it.
+"Create a load balancer, and register the Amazon EC2 instance with it."
+"Create a CloudFront distribution, and configure the Amazon EC2 instance as the origin."
+Create an Auto Scaling group from the instance using the Create AutoScaling Group action.
+Create a launch configuration from the instance using the Create launch Configuration action.
+Only in certain regions.
+Only in VPC.
+Yes.
+No.
+createVolumePermission.
+LaunchPermission.
+SharePermission.
+RequestPermission.
+Auto Scaling policy.
+Auto Scaling group.
+Auto Scaling tags.
+Auto Scaling launch configuration.
+The launch configuration can be created only using the Query APIs.
+Auto Scaling automatically creates a launch configuration directly from an EC2 instance.
+A user should manually create a launch configuration before creating an Auto Scaling group.
+The launch configuration should be created manually from the AWS CL.
+Private DNS values cannot be resolved between instances in peered VPCs.
+You can have up to 3 VPC peering connections between the same two VPCs at the same time.
+You cannot create a VPC peering connection between VPCs in different regions.
+You have a limit on the number active and pending VPC peering connections that you can have per VP.
+Amazon DynamoDB.
+Amazon Redshift.
+Any non-relational database.
+Amazon SimpleDB.
+security group.
+ACL.
+IAM.
+private IP Addresses.
+Amazon CloudFront.
+AWS Direct Connect.
+AWS CloudHSM.
+AWS VPN CloudHub.
+"You can detach secondary (ethN) network interfaces when the instance is running or stopped. However, you can't detach the primary (eth0) interface."
+"Launching an instance with multiple network interfaces automatically configures interfaces, private IP addresses, and route tables on the operating system of the instance."
+"You can attach a network interface in one subnet to an instance in another subnet in the same VPC, however, both the network interface and the instance must reside in the same Availability Zone."
+Attaching another network interface to an instance is a valid method to increase or double the network bandwidth to or from the dual-homed instance.
+All of the things listed here.
+Change security group membership for your instances while they're running.
+Assign static private IP addresses to your instances that persist across starts and stops.
+"Define network interfaces, and attach one or more network interfaces to your instances."
+"For each regional deployment, use RDS MySQL with a master in the region and a read replica in the HQ region."
+"For each regional deployment, use MySQL on EC2 with a master in the region and send hourly EBS snapshots to the HQ region."
+"For each regional deployment, use RDS MySQL with a master in the region and send hourly RDS snapshots to the HQ region."
+"For each regional deployment, use MySQL on EC2 with a master in the region and use S3 to copy data files hourly to the HQ region."
+Use Direct Connect to connect all regional MySQL deployments to the HQ region and reduce network latency for the batch process.
+950.
+990.
+1000.
+900.
+Amazon Glacier multipart upload.
+AWS Storage Gateway.
+VM Import/Export.
+AWS Import/Export.
+"Ports 22, 1433, 3389."
+"Ports 21, 1433, 3389."
+"Ports 25, 1433, 3389."
+"Ports 22, 1343, 3999."
+Data will be lost.
+Data persists.
+Key pairs.
+Elastic IP addresses.
+Placement groups.
+Amazon EBS snapshots.
+Amazon RDS.
+Amazon Glacier.
+Amazon EMR.
+Amazon IAM.
+The EC2 instance follows the rules of the older subnet.
+The EC2 instance follows the rules of both the subnets.
+"Not possible, cannot be connected to 2 ENIs."
+The EC2 instance follows the rules of the newer subnet.
+AWS reserves the first and the last private IP address in each subnet's CIDR block so you do not have enough addresses left to launch all of the new EC2 instances.
+"The Internet Gateway (IGW) of your VPC has scaled-up, adding more instances to handle the traffic spike, reducing the number of available private IP addresses for new instance launches."
+"The ELB has scaled-up, adding more instances to handle the traffic spike, reducing the number of available private IP addresses for new instance launches."
+AWS reserves one IP address in each subnet's CIDR block for Route 53 so you do not have enough addresses left to launch all of the new EC2 instances.
+AWS reserves the first four and the last IP address in each subnet's CIDR block so you do not have enough addresses left to launch all of the new EC2 instances.
+"You change storage type from standard to PIOPS, and Apply Immediately is set to true."
+"You change the DB instance class, and Apply Immediately is set to false."
+You change a static parameter in a DB parameter group.
+"You change the backup retention period for a DB instance from 0 to a nonzero value or from a nonzero value to 0, and Apply Immediately is set to false."
+Asynchronously.
+Synchronously.
+An AWS Direct Connect link between the VPC and the network housing the internal services.
+An Internet Gateway to allow a VPN connection.
+An Elastic IP address on the VPC instance.
+An IP address space that does not conflict with the one on-premises.
+Entries in Amazon Route 53 that allow the Instance to resolve its dependencies' IP addresses.
+A VM Import of the current virtual machine.
+Create a new IAM role and associated policies within the new region.
+Assign the existing IAM role to the Amazon EC2 instances in the new region.
+Copy the IAM role and associated policies to the new region and attach it to the instances.
+Create an Amazon Machine Image (AMI) of the instance and copy it to the desired region using the AMI Copy feature.
+Launch the instance from a private Amazon Machine Image (AMI).
+Assign a group of sequential Elastic IP address to the instances.
+Launch the instances in the Amazon Virtual Private Cloud (VPC).
+Launch the instances in a Placement Group.
+Use standard EC2 instances since each instance gets a private Domain Name Service (DNS) already.
+FetchFailure.
+DescriveF
