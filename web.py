@@ -1,75 +1,94 @@
-import requests
+import csv
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
-import json
 
-# URL of the GitHub repository
-url = 'https://github.com/Ditectrev/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Practice-Tests-Exams-Questions-Answers'
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
 
-# Payload for scraper API
-payload = {
-    'api_key': 'befc0eb3e75162db5167b8480375831e',
-    'url': url,
-    'render': 'true',
-}
-
-# Fetch the page
-page = requests.get('https://api.scraperapi.com', params=payload)
-
-# Parse the page with BeautifulSoup
-soup = BeautifulSoup(page.text, 'html.parser')
-repo = {}
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 try:
-    # Extracting the repository name
-    name_html_element = soup.find('strong', {"itemprop": "name"})
-    repo['name'] = name_html_element.get_text().strip() if name_html_element else "N/A"
+    URL = 'https://github.com/Ditectrev/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Practice-Tests-Exams-Questions-Answers'
+    driver.get(URL)
 
-    # Extracting the latest commit datetime
-    relative_time_html_element = soup.find('relative-time')
-    repo['latest_commit'] = relative_time_html_element['datetime'] if relative_time_html_element else "N/A"
+    wait = WebDriverWait(driver, 15)
+    target_frame = wait.until(EC.presence_of_element_located(
+        (By.CSS_SELECTOR, 'turbo-frame#repo-content-turbo-frame')
+    ))
 
-    # Extracting the branch name (with error handling)
-    branch_element = soup.find('span', {"class": "Text-sc-17v1xeu-0 bOMzPg"})
-    if branch_element:
-        repo['branch'] = branch_element.get_text().strip()
-    else:
-        repo['branch'] = "N/A"
-        print("Branch element not found, using 'N/A' as a fallback.")
+    for _ in range(5):
+        driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_DOWN)
+        time.sleep(2)
 
-    # Extracting the latest commit message
-    commit_element = soup.find('span', {"class": "Text-sc-17v1xeu-0 gPDEWA fgColor-default"})
-    repo['commit'] = commit_element.get_text().strip() if commit_element else "N/A"
+    time.sleep(5)
 
-    # Extracting the number of stars
-    stars_element = soup.find('span', {"id": "repo-stars-counter-star"})
-    repo['stars'] = stars_element.get_text().strip() if stars_element else "N/A"
 
-    # Extracting the number of forks
-    forks_element = soup.find('span', {"id": "repo-network-counter"})
-    repo['forks'] = forks_element.get_text().strip() if forks_element else "N/A"
+    page_source = driver.page_source
 
-    # Extracting the repository description
-    description_html_element = soup.find('p', {"class": "f4 my-3"})
-    repo['description'] = description_html_element.get_text().strip() if description_html_element else "N/A"
+finally:
+    driver.quit()
 
-    # Construct the README URL based on the extracted branch name
-    main_branch = repo['branch'] if repo['branch'] != "N/A" else 'main'
-    readme_url = f'https://raw.githubusercontent.com/Ditectrev/AWS-Certified-Solutions-Architect-Associate-SAA-C03-Practice-Tests-Exams-Questions-Answers/{main_branch}/README.md'
-    
-    # Fetch the README content
-    readme_page = requests.get(readme_url)
-    if readme_page.status_code != 404:
-        repo['readme'] = readme_page.text
-    else:
-        repo['readme'] = "README not found"
-    
-    # Output the repository data
-    print(repo)
 
-    # Save the data to a JSON file
-    with open('repo.json', 'w') as file:
-        json.dump(repo, file, indent=4)
-        print('Data saved to repo.json')
+soup = BeautifulSoup(page_source, 'html.parser')
 
-except Exception as e:
-    print(f"An error occurred: {e}")
+frame_content = soup.find('turbo-frame', id='repo-content-turbo-frame')
+
+def classify_question(text):
+    lower_text = text.lower()
+    if "choose 2 answers" in lower_text:
+        return 'Multiple Answers (Checkbox)'
+    if any(keyword in lower_text for keyword in ['list', 'select all', 'multiple']):
+        return 'Multiple Answers'
+    return 'Single Answer'
+
+if frame_content:
+    questions = []
+    question_number = 1
+
+    for heading in frame_content.find_all('h3', class_='heading-element'):
+        text = heading.get_text(strip=True)
+        if text:
+            classification = classify_question(text)
+            numbered_question = f"{question_number}. {text}"
+            questions.append([numbered_question, classification])
+            question_number += 1
+
+    checked_items = []
+    unchecked_items = []
+    for item in frame_content.find_all('li', class_='task-list-item'):
+        checkbox = item.find('input', type='checkbox')
+        if checkbox and checkbox.get('checked'):
+            checked_items.append(item.get_text(strip=True))
+        else:
+            unchecked_items.append(item.get_text(strip=True))
+
+    checked_items.sort()
+    sorted_task_list_items = checked_items + unchecked_items
+
+    csv_filename_questions = 'questions.csv'
+    with open(csv_filename_questions, 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Numbered Heading', 'Type'])
+        writer.writerows(questions)
+
+    csv_filename_task_list = 'task_list_items.csv'
+    with open(csv_filename_task_list, 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Task List Item'])
+        for item in sorted_task_list_items:
+            writer.writerow([item])
+
+    print(f"Extracted and classified {len(questions)} numbered headings and saved to '{csv_filename_questions}'.")
+    print(f"Extracted {len(sorted_task_list_items)} task list items with checked items listed first and sorted in ascending order, and saved to '{csv_filename_task_list}'.")
+
+else:
+    print("Target <turbo-frame> not found.")

@@ -1,4 +1,4 @@
-#!/home/belzatroy/Graduate/webscraping/venv/bin/python3
+#!/home/belzatroy/Graduate/web-scraping/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
