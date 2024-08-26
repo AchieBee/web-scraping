@@ -53,7 +53,6 @@ frame_content = soup.find('turbo-frame', id='repo-content-turbo-frame')
 # Function to classify the type of question based on its text
 def classify_question(text):
     lower_text = text.lower()
-
     if "choose 2 answers" in lower_text:
         return 'Multiple Answers (Checkbox)'  # Identifies questions requiring multiple answers
     if any(keyword in lower_text for keyword in ['list', 'select all', 'multiple']):
@@ -61,7 +60,7 @@ def classify_question(text):
     return 'Single Answer'  # Default classification for single-answer questions
 
 if frame_content:
-    questions = []  # List to store the extracted questions
+    questions = []  # List to store the extracted questions and their details
     question_number = 1  # Counter for numbering the questions
 
     # Extract all <h3> headings which represent the questions
@@ -69,43 +68,39 @@ if frame_content:
         text = heading.get_text(strip=True)  # Extract and clean the text from the heading
         if text:
             classification = classify_question(text)  # Classify the question type
-            numbered_question = f"{question_number}. {text}"  # Number the question
-            questions.append([numbered_question, classification])  # Add to the list
+            
+            # For each question, find associated answers (next <ul> element containing <li> items)
+            answers_list = heading.find_next('ul')
+            if answers_list:
+                correct_answers = []
+                incorrect_answers = []
+                
+                # Extract all task list items (answers)
+                for item in answers_list.find_all('li', class_='task-list-item'):
+                    checkbox = item.find('input', type='checkbox')
+                    if checkbox and checkbox.get('checked'):
+                        correct_answers.append(item.get_text(strip=True))  # Add correct answers
+                    else:
+                        incorrect_answers.append(item.get_text(strip=True))  # Add incorrect answers
+                
+                # Add question details to the list, with correct answers first
+                questions.append([
+                    f"{question_number}. {text}",
+                    classification,
+                    "; ".join(correct_answers),
+                    "; ".join(incorrect_answers)
+                ])
+
             question_number += 1  # Increment the question counter
 
-    checked_items = []  # List to store checked (correct) items
-    unchecked_items = []  # List to store unchecked items
+    # Save the questions and answers to a CSV file
+    with open('scraped_questions_and_answers.csv', mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['Question', 'Type', 'Correct Answers', 'Other Answers'])
+        for question, classification, correct_answers, other_answers in questions:
+            writer.writerow([question, classification, correct_answers, other_answers])
 
-    # Extract all task list items (answers)
-    for item in frame_content.find_all('li', class_='task-list-item'):
-        checkbox = item.find('input', type='checkbox')
-        if checkbox and checkbox.get('checked'):
-            checked_items.append(item.get_text(strip=True))  # Add checked items to the list
-        else:
-            unchecked_items.append(item.get_text(strip=True))  # Add unchecked items to the list
-
-    # Sort the checked items and combine with unchecked items
-    checked_items.sort()
-    sorted_task_list_items = checked_items + unchecked_items
-
-    # Save the extracted and classified questions to a CSV file
-    csv_filename_questions = 'questions.csv'
-    with open(csv_filename_questions, 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['Numbered Heading', 'Type'])  # Header row
-        writer.writerows(questions)  # Write the questions data
-
-    # Save the extracted task list items (answers) to a CSV file
-    csv_filename_task_list = 'task_list_items.csv'
-    with open(csv_filename_task_list, 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['Task List Item'])  # Header row
-        for item in sorted_task_list_items:
-            writer.writerow([item])  # Write each item to the file
-
-    print(f"Extracted and classified {len(questions)} numbered headings and saved to '{csv_filename_questions}'.")
-    print(f"Extracted {len(sorted_task_list_items)} task list items with checked items listed first and sorted in ascending order, and saved to '{csv_filename_task_list}'.")
+    print("Scraping completed and data saved to 'scraped_questions_and_answers.csv'.")
 
 else:
-    # Print a message if the target content could not be found
-    print("Target <turbo-frame> not found.")
+    print("Content frame not found on the page.")
