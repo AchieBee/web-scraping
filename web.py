@@ -61,6 +61,7 @@ def classify_question(text):
 
 if frame_content:
     questions = []  # List to store the extracted questions and their details
+    max_answers_count = 0  # Track the maximum number of answers for any question
     question_number = 1  # Counter for numbering the questions
 
     # Extract all <h3> headings which represent the questions
@@ -68,13 +69,13 @@ if frame_content:
         text = heading.get_text(strip=True)  # Extract and clean the text from the heading
         if text:
             classification = classify_question(text)  # Classify the question type
-            
+
             # For each question, find associated answers (next <ul> element containing <li> items)
             answers_list = heading.find_next('ul')
             if answers_list:
                 correct_answers = []
                 incorrect_answers = []
-                
+
                 # Extract all task list items (answers)
                 for item in answers_list.find_all('li', class_='task-list-item'):
                     checkbox = item.find('input', type='checkbox')
@@ -82,25 +83,37 @@ if frame_content:
                         correct_answers.append(item.get_text(strip=True))  # Add correct answers
                     else:
                         incorrect_answers.append(item.get_text(strip=True))  # Add incorrect answers
-                
-                # Add question details to the list, with correct answers first
+
+                # Combine correct and incorrect answers
+                all_answers = correct_answers + incorrect_answers
+
+                # Track the maximum number of answers
+                if len(all_answers) > max_answers_count:
+                    max_answers_count = len(all_answers)
+
+                # Add question details to the list
                 questions.append([
                     f"{question_number}. {text}",
                     classification,
-                    "; ".join(correct_answers),
-                    "; ".join(incorrect_answers)
+                    all_answers  # Store all answers as a list
                 ])
 
             question_number += 1  # Increment the question counter
 
-    # Save the questions and answers to a CSV file
-    with open('scraped_questions_and_answers.csv', mode='w', newline='') as file:
+    # Save the questions and answers to a CSV file, with answers in separate columns
+    with open('scraped_questions_answers_columns.csv', mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Question', 'Type', 'Correct Answers', 'Other Answers'])
-        for question, classification, correct_answers, other_answers in questions:
-            writer.writerow([question, classification, correct_answers, other_answers])
 
-    print("Scraping completed and data saved to 'scraped_questions_and_answers.csv'.")
+        # Write header: 'Question', 'Type', and dynamic 'Answer 1', 'Answer 2', ..., based on max_answers_count
+        header = ['Question', 'Type'] + [f'Answer {i + 1}' for i in range(max_answers_count)]
+        writer.writerow(header)
+
+        # Write question data with answers in separate columns
+        for question, classification, answers in questions:
+            row = [question, classification] + answers + [''] * (max_answers_count - len(answers))  # Pad missing answers
+            writer.writerow(row)
+
+    print("Scraping completed and data saved to 'scraped_questions_answers_columns.csv'.")
 
 else:
     print("Content frame not found on the page.")
