@@ -54,7 +54,7 @@ frame_content = soup.find('turbo-frame', id='repo-content-turbo-frame')
 def classify_question(text):
     lower_text = text.lower()
     if "choose 2 answers" in lower_text:
-        return 'Multiple Answers (Checkbox)'  # Identifies questions requiring multiple answers
+        return 'Multiple Answers (Check)'  # Identifies questions requiring multiple answers
     if any(keyword in lower_text for keyword in ['list', 'select all', 'multiple']):
         return 'Multiple Answers'  # Identifies other types of multiple-answer questions
     return 'Single Answer'  # Default classification for single-answer questions
@@ -91,11 +91,15 @@ if frame_content:
                 if len(all_answers) > max_answers_count:
                     max_answers_count = len(all_answers)
 
+                # Determine if the question type is radio (single) or check (multiple)
+                check_radio = 'Check' if 'Multiple' in classification else 'Radio'
+
                 # Add question details to the list
                 questions.append([
                     f"{question_number}. {text}",
-                    classification,
-                    all_answers  # Store all answers as a list
+                    all_answers,  # Store all answers as a list
+                    correct_answers,  # Store correct answers separately
+                    check_radio  # Store whether the question is single or multiple choice
                 ])
 
             question_number += 1  # Increment the question counter
@@ -104,13 +108,15 @@ if frame_content:
     with open('scraped_questions_answers_columns.csv', mode='w', newline='') as file:
         writer = csv.writer(file)
 
-        # Write header: 'Question', 'Type', and dynamic 'Answer 1', 'Answer 2', ..., based on max_answers_count
-        header = ['Question', 'Type'] + [f'Answer {i + 1}' for i in range(max_answers_count)]
+        # Write header: 'Question', dynamic 'Answer 1', 'Answer 2', ..., based on max_answers_count, and extra columns
+        header = ['Question'] + [f'Answer {i + 1}' for i in range(max_answers_count)] + ['Correct Answers', 'Check/Radio']
         writer.writerow(header)
 
         # Write question data with answers in separate columns
-        for question, classification, answers in questions:
-            row = [question, classification] + answers + [''] * (max_answers_count - len(answers))  # Pad missing answers
+        for question, answers, correct_answers, check_radio in questions:
+            row = [question] + answers + [''] * (max_answers_count - len(answers))  # Pad missing answers
+            row.append(", ".join(correct_answers))  # Append correct answers
+            row.append(check_radio)  # Append whether it's radio or check
             writer.writerow(row)
 
     print("Scraping completed and data saved to 'scraped_questions_answers_columns.csv'.")
